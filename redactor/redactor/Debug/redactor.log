@@ -1,0 +1,17 @@
+﻿Сборка начата 17.05.2015 21:38:09.
+     1>Проект "C:\Users\Олег\Documents\Visual Studio 2013\Projects\FileProtector\redactor\redactor\redactor.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         D:\must_have\Microsoft Visual Studio 2014\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\redactor.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib redactor.cpp
+         redactor.cpp
+       Link:
+         D:\must_have\Microsoft Visual Studio 2014\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Олег\Documents\Visual Studio 2013\Projects\FileProtector\Debug\redactor.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\redactor.Form1.resources /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Олег\Documents\Visual Studio 2013\Projects\FileProtector\Debug\redactor.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         Debug\AssemblyInfo.obj
+         Debug\redactor.obj
+         Debug\stdafx.obj
+         "Debug\.NETFramework,Version=v4.5.AssemblyAttributes.obj"
+         redactor.vcxproj -> C:\Users\Олег\Documents\Visual Studio 2013\Projects\FileProtector\Debug\redactor.exe
+     1>Сборка проекта "C:\Users\Олег\Documents\Visual Studio 2013\Projects\FileProtector\redactor\redactor\redactor.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+
+Затраченное время: 00:00:01.02

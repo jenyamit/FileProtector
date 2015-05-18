@@ -1,0 +1,18 @@
+﻿Сборка начата 17.05.2015 22:13:03.
+     1>Проект "C:\Users\Олег\Documents\Visual Studio 2013\Projects\FileProtector\Locker\Locker.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         D:\must_have\Microsoft Visual Studio 2014\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Facades\\" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Locker.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib Locker.cpp
+         Locker.cpp
+     1>Locker.cpp(95): warning C4800: BOOL: принудительно задано логическое значение "true" или "false" (предупреждение о производительности)
+       Link:
+         D:\must_have\Microsoft Visual Studio 2014\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Олег\Documents\Visual Studio 2013\Projects\FileProtector\Debug\Locker.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Олег\Documents\Visual Studio 2013\Projects\FileProtector\Debug\Locker.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         Debug\AssemblyInfo.obj
+         Debug\Locker.obj
+         Debug\stdafx.obj
+         "Debug\.NETFramework,Version=v4.5.AssemblyAttributes.obj"
+         Locker.vcxproj -> C:\Users\Олег\Documents\Visual Studio 2013\Projects\FileProtector\Debug\Locker.exe
+     1>Сборка проекта "C:\Users\Олег\Documents\Visual Studio 2013\Projects\FileProtector\Locker\Locker.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+
+Затраченное время: 00:00:02.39
