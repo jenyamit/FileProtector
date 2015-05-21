@@ -106,7 +106,7 @@ void processAllFiles()
 
 	//LOCK
 
-	array<String^>^ namesList = (array<String^>^)key->GetValue("files");
+	array<String^>^ namesList = (array<String^>^)key->GetValue("toLock");
 	array<String^>^ notLockedFiles = gcnew array<String^>(namesList->Length);
 	array<String^>^ lockedFiles = gcnew array<String^>(namesList->Length);
 	int notLockedCount = 0;
@@ -144,12 +144,18 @@ void processAllFiles()
 
 void work()
 {
-	HANDLE hEvent = OpenEvent(EVENT_ALL_ACCESS, FALSE, L"FileProtector");
-
-	//while (true)
+	HANDLE eventRedactor = CreateEvent(NULL, FALSE, FALSE, L"FileProtectorR");
+	HANDLE eventLocker = CreateEvent(NULL, FALSE, FALSE, L"FileProtectorL");
+	SetEvent(eventRedactor);
+	bool firstLoop = true;
+	while (true)
 	{
-		WaitForSingleObject(hEvent, INFINITE);
+		WaitForSingleObject(eventRedactor, INFINITE);
 		processAllFiles();
+		if (firstLoop)
+			firstLoop = false;
+		else
+			SetEvent(eventLocker);
 	}
 }
 

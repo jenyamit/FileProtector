@@ -1,4 +1,5 @@
 #pragma once
+#include <Windows.h>
 
 namespace redactor {
 
@@ -21,10 +22,16 @@ namespace redactor {
 		Form1(void)
 		{
 			InitializeComponent();
+			eventRedactor = OpenEvent(EVENT_ALL_ACCESS, FALSE, L"FileProtectorR");
+			eventLocker = OpenEvent(EVENT_ALL_ACCESS, FALSE, L"FileProtectorL");
 		}
 
 		void loadDir();
 		void loadFile();
+		RegistryKey^ getLines(String^ valueName, array<String^>^* lines);
+		void appendLine(String^ valueName, String^ line);
+		HANDLE eventRedactor;
+		HANDLE eventLocker;
 
 	protected:
 		~Form1()
@@ -204,8 +211,8 @@ namespace redactor {
 
 		}
 #pragma endregion
-	
-private: System::Void openFileDialog1_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+
+	private: System::Void openFileDialog1_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
 		RegistryKey^ key = Registry::CurrentUser;
 		key = key->OpenSubKey("Software\\FileProtector", true);
 		array<String^>^ namesList = (array<String^>^)key->GetValue("lockedFiles");
@@ -216,19 +223,21 @@ private: System::Void openFileDialog1_FileOk(System::Object^  sender, System::Co
 		}
 		TextBoxEditor->Lines = file;
 	}
-	
+
 	private: System::Void âûáîð_êàòàëîãàToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 		loadDir();
 	}
 
 	private: System::Void âûõîäToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
+
 	private: System::Void ñîõðàíèòüToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 		File::WriteAllLines(openFileDialog1->FileName, TextBoxEditor->Lines, Encoding::Default);
 	}
-private: System::Void dataGridView1_CellDoubleClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
-	loadFile();
-}
-};
+
+	private: System::Void dataGridView1_CellDoubleClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+		loadFile();
+	}
+	};
 }
 
