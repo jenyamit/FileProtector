@@ -26,12 +26,31 @@ namespace redactor {
 			eventLocker = OpenEvent(EVENT_ALL_ACCESS, FALSE, L"FileProtectorL");
 		}
 
+		String^ openedFileName;
+		HANDLE lockedFileHandle;
 		void loadDir();
+		void lock();
+		void unlock();
 		void loadFile();
+		void saveFile();
+		void closeFile();
 		RegistryKey^ getLines(String^ valueName, array<String^>^* lines);
 		void appendLine(String^ valueName, String^ line);
 		HANDLE eventRedactor;
 		HANDLE eventLocker;
+
+	protected:
+		virtual System::Void OnClosing(System::ComponentModel::CancelEventArgs^ e) override {
+			__super::OnClosing(e);
+			if (MessageBox::Show("Âû õîòèòå âûéòè?", "Âûõîä", MessageBoxButtons::YesNo,
+				MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::No)
+				e->Cancel = true;
+			else
+			{
+				closeFile();
+				Application::Exit();
+			}
+		}
 
 	protected:
 		~Form1()
@@ -229,10 +248,12 @@ namespace redactor {
 	}
 
 	private: System::Void âûõîäToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		closeFile();
+		Application::Exit();
 	}
 
 	private: System::Void ñîõðàíèòüToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
-		File::WriteAllLines(openFileDialog1->FileName, TextBoxEditor->Lines, Encoding::Default);
+		saveFile();
 	}
 
 	private: System::Void dataGridView1_CellDoubleClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {

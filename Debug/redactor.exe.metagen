@@ -18,10 +18,16 @@ Class redactor.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
+    System.String openedFileName : Public
+    Void* lockedFileHandle : Public
     Void* eventRedactor : Public
     Void* eventLocker : Public
   Methods:
     loadDir(): PrivateScope, Public, HideBySig
+    lock(): PrivateScope, Public, HideBySig
+    unlock(): PrivateScope, Public, HideBySig
     loadFile(): PrivateScope, Public, HideBySig
+    saveFile(): PrivateScope, Public, HideBySig
+    closeFile(): PrivateScope, Public, HideBySig
     getLines(String, String[]*): PrivateScope, Public, HideBySig
     appendLine(String, String): PrivateScope, Public, HideBySig
